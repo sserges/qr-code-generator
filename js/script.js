@@ -22,7 +22,7 @@ const onSubmit = (e) => {
       setTimeout(() => {
         const saveUrl = qr.querySelector('img').src
         createSaveBtn(saveUrl)
-      })
+      }, 50)
     }, 1000)
   }
 }
@@ -45,6 +45,8 @@ const hideSpinner = () => {
 
 const clearUI = () => {
   qr.innerHTML = ''
+  const saveLink = document.getElementById('save-link')
+  if (saveLink) saveLink.remove()
 }
 
 const createSaveBtn = (saveUrl) => {
